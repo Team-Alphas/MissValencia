@@ -26,12 +26,14 @@ from tg_bot.modules.helper_funcs.misc import paginate_modules
 
 
 PM_START_TEXT = """
-✨Hey {} I am ✨ {} !.
+✨Hey {}, I am {}
 Im an Anime themed + Super Group Management Bot, feel free to add me to your groups!
 You can find my list of available commands with /help.
+
 """
 
 HELP_STRINGS = """
+
 Hey there! My name is Pικαϲнυ.
 
 -> I am a pro group management bot, here to help you get around and keep the order in your groups!
@@ -43,7 +45,7 @@ Here is modules:
 And the following:
 """.format(dispatcher.bot.first_name, "" if not ALLOW_EXCL else "\nAll commands can either be used with / or !.\n")
 
-TECHNO_IMG = ""
+TECHNO_IMG = "https://telegra.ph/file/7a948e5e451676e5279ff.jpg"
 IMPORTED = {}
 MIGRATEABLE = []
 HELPABLE = {}
@@ -135,14 +137,14 @@ def start(bot: Bot, update: Update, args: List[str]):
                 PM_START_TEXT.format(escape_markdown(first_name), escape_markdown(bot.first_name), OWNER_ID),
                 parse_mode=ParseMode.MARKDOWN, reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton(text="Help And Commands❓",
                                                                        callback_data="help_back".format(bot.username)),
-                                                                                   InlineKeyboardButton(text="My Master",
-                                                                       url="t.me/teamishere")],
+                                                                                   InlineKeyboardButton(text="💻 My Master 💻",
+                                                                       url="t.me/PAPA_OO_PAPA")],
+                                                                                   [InlineKeyboardButton(text="➕ Add Me To Your Group ➕",
+                                                                       url="t.me/PIKACHU_LAVA_BOT?startgroup=true".format(bot.username)),
                                                                                    InlineKeyboardButton(text="❤ Channel",
-                                                                       url="t.me/pikachubotupdates")],
-                                                                                   [InlineKeyboardButton(text="➕ Add Me To Your Grp ➕",
-                                                                       url="t.me/Pikachu_lava_bot?startgroup=true".format(bot.username)),
-                                                                                   InlineKeyboardButton(text="✨ Support",
-                                                                       url="t.me/Pikachubotsupport")]                                                             
+                                                                       url="t.me/PIKACHUBOTUPDATES")
+                                                                                 ]]))
+
     else:
         update.effective_message.reply_text("Yuss, I am Already ONline")
 
@@ -246,7 +248,7 @@ def get_help(bot: Bot, update: Update):
         update.effective_message.reply_text("Contact me in Direct Message to get the help.",
                                             reply_markup=InlineKeyboardMarkup(
                                                 [[InlineKeyboardButton(text="HELP",
-                                                                       url="t.me/pikachu_lava_bot?start=help".format(
+                                                                       url="t.me/PIKACHU_LAVA_BOT?start=help".format(
                                                                            bot.username))]]))
         return
 
@@ -431,7 +433,7 @@ def get_settings(bot: Bot, update: Update):
             msg.reply_text(text,
                            reply_markup=InlineKeyboardMarkup(
                                [[InlineKeyboardButton(text="Settings",
-                                                      url="t.me/pikachu_lava_bot?start=stngs_{}".format(
+                                                      url="t.me/PIKACHU_LAVA_BOT?start=stngs_{}".format(
                                                           bot.username, chat.id))]]))
         else:
             text = "Click here to check your settings."
