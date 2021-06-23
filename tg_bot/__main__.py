@@ -26,30 +26,24 @@ from tg_bot.modules.helper_funcs.misc import paginate_modules
 
 
 PM_START_TEXT = """
-**Hello {}, My Name is {}!** 
-I am an **SUPERB**  group management bot.
-You can find the list of available commands with /help.
-
+✨Hey {} I am ✨ {} !.
+Im an Anime themed + Super Group Management Bot, feel free to add me to your groups!
+You can find my list of available commands with /help.
 """
 
 HELP_STRINGS = """
+Hey there! My name is Pικαϲнυ.
 
-Hello! my name *{}*.
+-> I am a pro group management bot, here to help you get around and keep the order in your groups!
+-> I have lots of handy features, such as flood control, a warning system, a note keeping system, and even predetermined replies on certain keywords.
 
-*Main* commands available:
- - /start: start the bot
- - /help: PM's you this message.
- - /help <module name>: PM's you info about that module.
- - /settings:
-   - in PM: will send you your settings for all supported modules.
-   - in a group: will redirect you to pm, with all that chat's settings.
-
+Here is modules:
 
 {}
 And the following:
 """.format(dispatcher.bot.first_name, "" if not ALLOW_EXCL else "\nAll commands can either be used with / or !.\n")
 
-TECHNO_IMG = "https://telegra.ph/file/84b2017bc2f3c90f2e61c.jpg"
+TECHNO_IMG = ""
 IMPORTED = {}
 MIGRATEABLE = []
 HELPABLE = {}
@@ -139,14 +133,16 @@ def start(bot: Bot, update: Update, args: List[str]):
             update.effective_message.reply_photo(
                 TECHNO_IMG,
                 PM_START_TEXT.format(escape_markdown(first_name), escape_markdown(bot.first_name), OWNER_ID),
-                parse_mode=ParseMode.MARKDOWN, reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton(text="🤝HELP🤝",
+                parse_mode=ParseMode.MARKDOWN, reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton(text="Help And Commands❓",
                                                                        callback_data="help_back".format(bot.username)),
-                                                                                   InlineKeyboardButton(text="🧑‍💻My Creator🧑‍💻",
+                                                                                   InlineKeyboardButton(text="My Master",
                                                                        url="t.me/teamishere")],
-                                                                                   [InlineKeyboardButton(text="ADD GRAND OFFICIAL TO YOUR GROUP",
-                                                                       url="t.me/{}?startgroup=true".format(bot.username)),
-                                                                                   InlineKeyboardButton(text="Source Code",
-                                                                       url="https://github.com/legendx22/GRANDROBOT")
+                                                                                   InlineKeyboardButton(text="❤ Channel",
+                                                                       url="t.me/pikachubotupdates")],
+                                                                                   [InlineKeyboardButton(text="➕ Add Me To Your Grp ➕",
+                                                                       url="t.me/Pikachu_lava_bot?startgroup=true".format(bot.username)),
+                                                                                   InlineKeyboardButton(text="✨ Support",
+                                                                       url="t.me/Pikachubotsupport")
                                                                                  ]]))
 
     else:
@@ -252,7 +248,7 @@ def get_help(bot: Bot, update: Update):
         update.effective_message.reply_text("Contact me in Direct Message to get the help.",
                                             reply_markup=InlineKeyboardMarkup(
                                                 [[InlineKeyboardButton(text="HELP",
-                                                                       url="t.me/{}?start=help".format(
+                                                                       url="t.me/pikachu_lava_bot?start=help".format(
                                                                            bot.username))]]))
         return
 
@@ -437,7 +433,7 @@ def get_settings(bot: Bot, update: Update):
             msg.reply_text(text,
                            reply_markup=InlineKeyboardMarkup(
                                [[InlineKeyboardButton(text="Settings",
-                                                      url="t.me/{}?start=stngs_{}".format(
+                                                      url="t.me/pikachu_lava_bot?start=stngs_{}".format(
                                                           bot.username, chat.id))]]))
         else:
             text = "Click here to check your settings."
