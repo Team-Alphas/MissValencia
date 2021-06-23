@@ -135,13 +135,13 @@ def start(bot: Bot, update: Update, args: List[str]):
             update.effective_message.reply_photo(
                 TECHNO_IMG,
                 PM_START_TEXT.format(escape_markdown(first_name), escape_markdown(bot.first_name), OWNER_ID),
-                parse_mode=ParseMode.MARKDOWN, reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton(text="Help And Commands❓",
+                parse_mode=ParseMode.MARKDOWN, reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton(text="𝐂𝐎𝐌𝐌𝐀𝐍𝐃𝐒",
                                                                        callback_data="help_back".format(bot.username)),
-                                                                                   InlineKeyboardButton(text="💻 My Master 💻",
+                                                                                   InlineKeyboardButton(text="𝐌𝐘 𝐌𝐀𝐒𝐓𝐄𝐑",
                                                                        url="t.me/PAPA_OO_PAPA")],
-                                                                                   [InlineKeyboardButton(text="➕ Add Me To Your Group ➕",
+                                                                                   [InlineKeyboardButton(text="𝐀𝐃𝐃 𝐌𝐄",
                                                                        url="t.me/PIKACHU_LAVA_BOT?startgroup=true".format(bot.username)),
-                                                                                   InlineKeyboardButton(text="❤ Channel",
+                                                                                   InlineKeyboardButton(text="𝐔𝐏𝐃𝐀𝐓𝐄𝐒",
                                                                        url="t.me/PIKACHUBOTUPDATES")
                                                                                  ]]))
 
