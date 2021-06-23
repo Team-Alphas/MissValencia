@@ -142,8 +142,7 @@ def start(bot: Bot, update: Update, args: List[str]):
                                                                                    [InlineKeyboardButton(text="➕ Add Me To Your Grp ➕",
                                                                        url="t.me/Pikachu_lava_bot?startgroup=true".format(bot.username)),
                                                                                    InlineKeyboardButton(text="✨ Support",
-                                                                       url="t.me/Pikachubotsupport")]
-                                                                                 
+                                                                       url="t.me/Pikachubotsupport")]                                                             
     else:
         update.effective_message.reply_text("Yuss, I am Already ONline")
 
